@@ -1,0 +1,102 @@
+@use '../abstracts/mixins' as *;
+@use '../base/color' as *;
+
+%tag-base {
+  @include inline-flexbox;
+  height: 20px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.tag {
+  @extend %tag-base;
+  color: $black;
+}
+
+.tag-sale {
+  @extend %tag-base;
+  padding: 0 10px;
+  background-color: #ffcf54;
+}
+
+.tag-cate {
+  color: #000;
+  background-color: #fff;
+  padding: 3.5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.tag-company {
+  color: #000;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.tag-outline {
+  @extend %tag-base;
+  border: 1px solid #ddd;
+
+  @include responsive(D) {
+    color: $black;
+  }
+}
+
+.tag-green {
+  @extend %tag-base;
+  color: $white;
+  background-color: $green;
+}
+
+.tag-orange {
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid $orange;
+  color: #f46527;
+  text-align: center;
+  margin-right:8px;
+  margin-bottom:10px;
+}
+
+.tag-black {
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  border: 1.4px solid #000;
+  color: #000;
+  text-align: center;
+  font-weight: bold;
+}
+
+.tag-black.on {
+  color: #fff;
+  background-color: #000;
+}
+
+.tag-orange.on {
+  color: #fff;
+  background-color: #f46527;
+}
+
+.tag-orange:hover {
+  color: #f46527;
+  background: #ffe9df;
+}
+
+.tag-gray {
+  @extend %tag-base;
+  color: $white;
+  background-color: $gray;
+}
+
+.main-sort-row1 {
+  display: flex;
+  gap: 8px;
+}

@@ -1,0 +1,75 @@
+@use './abstracts/mixins' as *;
+
+html {
+  width: 100%;
+  height: 100%;
+
+  body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    #root {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  .container {
+    height: 100%;
+  }
+}
+
+.section-main-activity,
+.section-main-restaurant,
+.section-main-youtube,
+.section {
+  margin: 0 auto;
+
+  @include responsive(D) {
+    max-width: 1440px;
+  }
+}
+
+.wrapper-main {
+  margin: 0px 20px 0px 20px;
+}
+
+.joLXfm {
+  height: 400px !important;
+
+}
+
+.section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.col-12 {
+  padding: 0;
+}
+
+.section-main-activity-contentsDisplayArea {
+  .main-slider-product {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+
+    @include responsive(D) {
+      flex-direction: row;
+    }
+  }
+}

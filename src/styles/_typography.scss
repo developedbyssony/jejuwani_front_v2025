@@ -1,0 +1,170 @@
+@use './abstracts/mixins' as *;
+@use './base/color' as *;
+
+
+$font-main: "Pretendard", sans-serif;
+$font-price: "Tahoma";
+
+$font-size-10: 10px;
+$line-height-10: 16px;
+$letter-spacing-10: -0.01em;
+
+$font-size-13: 13px;
+$line-height-13: 20px;
+$letter-spacing-13: -0.01em;
+
+$font-size-18: 18px;
+$line-height-18: 28px;
+$letter-spacing-18: -0.02em;
+
+$font-size-24: 24px;
+$line-height-24: 34px;
+$letter-spacing-24: -0.01em;
+
+$font-size-32: 32px;
+$line-height-32: 34px;
+$letter-spacing-32: -0.01em;
+
+$font-size-11: 11px;
+$font-size-13: 13px;
+$font-size-16: 16px;
+$font-size-19: 19px;
+$font-size-20: 20px;
+$font-size-24: 24px;
+$font-size-28: 28px;
+$font-size-34: 34px;
+$line-height: 120%;
+
+
+.text-style-13 {
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+}
+
+.text-style-16 {
+  font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%;
+}
+
+.text-style-20 {
+  font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%;
+}
+
+.text-style-23 {
+  font-size: 23px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%;
+}
+
+.text-style-24 {
+  font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%;
+}
+
+.text-style-34 {
+  font-size: 34px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%;
+} 
+
+.text-style-40 {
+  font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%;
+}
+
+%price-base {
+  font-family: $font-price;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  .amount {
+    line-height: 1;
+  }
+
+  .currency {
+    font-family: $font-main;
+  }
+}
+
+.price-12,
+.price-20,
+.price-32,
+.price-40 {
+  @extend %price-base;
+  color: $black;
+
+  .amount {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .currency {
+    font-weight: bold;
+  }
+}
+
+.price-16 {
+  .amount {
+    font-size: 16px;
+  }
+
+  .currency {
+    font-size:14px;
+  }
+}
+
+.price-20 {
+  font-size: 20px;
+  .amount {
+    font-size: 20px;
+  }
+
+  .currency {
+    font-size:16px;
+  }
+}
+
+.price-32 {
+  font-size: 32px;
+  font-weight: 700;
+line-height: 120%;
+
+  .amount {
+    font-size: 32px;
+  }
+
+  .currency {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+  }
+}
+
+.price-40 {
+  font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 120%;
+
+  .currency {
+    font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; /* 114.286% */
+letter-spacing: -0.56px;
+  }
+}

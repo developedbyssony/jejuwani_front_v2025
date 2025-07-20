@@ -1,0 +1,177 @@
+@use './base/font';
+@use './base/normalize';
+@use './base/reset';
+@use './abstracts/variables' as *;
+@use './abstracts/mixins' as *;
+@use './base/color' as *;
+@use './typography';
+@use './layout';
+@use './components/footer';
+@use './components/header';
+@use './components/chip';
+@use './components/lnb';
+@use './components/youtube-footer';
+@use './components/slide';
+@use './components/cardItem';
+@use './components/tag';
+@use './components/category';
+@use './components/input';
+@use './components/modal';
+@use './components/login';
+@use './components/board/pagination';
+@use './components/board/board';
+@use './components/button';
+@use './components/signup';
+@use './components/banner';
+@use './components/dropdown';
+@use './components/order-form';
+@use './components/pages/car';
+@use './components/pages/main';
+@use './components/pages/cart';
+@use './components/pages/blog';
+@use './components/pages/restaurant';
+@use './components/pages/order';
+
+/* overflow 스크롤 x 안되도록 */
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.visually-hidden,
+.blind {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+}
+
+footer {
+  width: 100%;
+  height: 188px;
+  background-color: $gray-bgc;
+  padding: 32px 160px;
+}
+
+.category {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-tit {
+  color: #000;
+  font-weight: 700;
+}
+
+.footer-info1 a {
+  color: $black;
+}
+
+.footer-tel {
+  color: $black;
+  font-weight: 700;
+}
+
+#main-tit {
+  margin-top: 3px;
+  margin-bottom: 33px;
+  line-height: 120%;
+
+  span {
+    display: block;
+    margin-left: 0px;
+
+    @include responsive(T) {
+      display: inline;
+      margin-left: 4px;
+    }
+  }
+}
+
+.signup-tit1 {
+  color: $primary-color;
+  font-weight: 700;
+}
+
+.signup-tit2 {
+  color: $primary-color;
+  font-weight: 700;
+}
+
+.signup-page-tit {
+  color: $black;
+  font-weight: 700;
+}
+
+.btn-my-cart {
+  height: 55px;
+  width: 224px;
+}
+
+.sec-main-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 90px auto;
+
+  .section-main-search {
+    background-image: url("assets/main/main-search.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+
+    @include responsive(D) {
+      border-radius: 60px;
+      height: 500px;
+    }
+
+    .section-main-search-input-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+}
+
+#main-search-input {
+  height: 70px;
+  width: 60%;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+#main-search-tit {
+  text-align: center;
+  font-weight: 700;
+  color: white;
+}
+
+.fVIlsA {
+  height: auto !important;
+}

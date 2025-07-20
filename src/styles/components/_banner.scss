@@ -1,0 +1,49 @@
+.drop_pop.slideUp {
+  display: none;
+}
+
+.drop_pop.slideDown {
+  display: block;
+}
+
+.drop_pop {
+  width: 100%;
+  background-color: #000;
+
+  .drop_wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+
+    a {
+      height: 80px;
+      width: 100%;
+      background-image: url("../assets/main/main-banner.png");
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .cls_wrap {
+    display: flex;
+    justify-content: flex-end;
+    color: #fff;
+
+    form {
+      margin: 0;
+      padding: 0;
+
+      label {}
+
+      span {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/color' as *;
+
+.my-following-section {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.blog-post-frame {
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.blog-post-frame-my {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.blog-post-left {
+  width: 70px;
+  height: 100%;
+  background-color: white;
+}
+
+.blog-user-profile-img {
+  float: left;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+.blog-user-profile-img-user {
+  float: left;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border: 2px solid #4e6a75;
+  border-radius: 50%;
+  margin-right: 20px;
+  background-image: url(assets/sub/user-profile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blog-post-right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.blog-post-right p {
+  white-space: normal;
+  margin-bottom: 17px;
+}
+
+.user-new-post-contents {
+  border-radius: 4px;
+  padding: 35px;
+  font-size: 24px;
+  background-color: $gray-bgc;
+}
+
+.post-nick {
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+#comment-index {
+  margin-bottom: 16px;
+}
+
+.following-post {
+  margin-top: 40px;
+}
+
+.bGNdfC {
+  margin-bottom: 0px;
+}
+
+.tab-content {
+  display: flex;
+
+  @include responsive(D) {
+    flex-direction: row;
+  }
+}
+
+.tab-content>.searchInfo {
+  display: none;
+  width: 50%;
+  height: 100%;
+
+  @include responsive(D) {
+    display: flex;
+  }
+}
+
+.tab-content>.tab-item-wrapper {
+  position: relative;
+  width: 100%;
+  top: 84px;
+  border: 4px solid blue;
+
+  @include responsive(D) {
+    width: 50%;
+  }
+}
+
+.main-slide-product {
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: visible;
+}

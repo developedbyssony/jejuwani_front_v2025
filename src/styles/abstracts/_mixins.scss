@@ -1,0 +1,50 @@
+@use '../abstracts/variables' as *;
+
+// responsive
+@mixin responsive($screen) {
+  @if ($screen == "T") {
+    @media screen and (min-width: $md-breakpoint) {
+      @content;
+    }
+  }
+
+  @if ($screen == "D") {
+    @media screen and (min-width: $lg-breakpoint) {
+      @content;
+    }
+  }
+}
+
+//flexbox
+$flex-map: (
+  start: flex-start,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  stretch: stretch,
+  center: center,
+);
+
+
+@mixin flexbox($jc: center, $ai: center) {
+  display: flex;
+  align-items: _get-flex-value($ai);
+  justify-content: _get-flex-value($jc);
+}
+
+.list {
+  @include flexbox(start);
+}
+
+@mixin inline-flexbox($jc: center, $ai: center) {
+  display: inline-flex;
+  align-items: _get-flex-value($ai);
+  justify-content: _get-flex-value($jc);
+}
+
+@mixin column-flexbox($jc: center, $ai: center) {
+  display: flex;
+  flex-direction: column;
+  align-items: _get-flex-value($ai);
+  justify-content: _get-flex-value($jc);
+}

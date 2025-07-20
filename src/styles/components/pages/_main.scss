@@ -1,0 +1,73 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/color' as *;
+
+.section-main-activity-tit,
+.section-main-restaurant-tit,
+.section-main-restaurant-tit {
+    display: flex;
+
+    flex-direction: column;
+
+    @include responsive(D) {
+        align-items: center;
+    }
+}
+
+.htEZyc,
+.cbhlMn,
+.jmCFtp {
+    height: auto !important;
+}
+
+.section-main-restaurant-tit {
+    .main-sort-row1 {
+        .tag-orange {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+.productUnit-frame-wanner-blog:nth-child(4),
+.productUnit-frame-wanner-blog:nth-child(5),
+.productUnit-frame-wanner-blog:nth-child(6) {
+    display: none;
+
+    @include responsive(D) {
+        display: flex;
+    }
+}
+
+.slick-slider {
+    @include responsive(T) {
+        margin-top: 23px;
+    }
+}
+
+.slick-dots {
+    position: relative !important;
+    bottom: 0px !important;
+    margin-bottom: 35px;
+}
+
+.slick-slide {
+    padding: 0px;
+
+    @include responsive(T) {
+        padding: 0px 4px;
+    }
+}
+
+#main-sub-tit {
+    margin-top: 85px;
+}
+
+#main-sorting {
+
+
+    @include responsive(D) {
+            display: flex;
+    gap: 8px;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,82 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/color' as *;
+
+%page-item-base {
+  @include inline-flexbox;
+  height: 26px;
+  font-weight: 700;
+  border-radius: 4px;
+  background-color: $white;
+}
+
+.pagination {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom: 111px;
+    margin-top: 41px;
+
+  .page-control {
+    @extend %page-item-base;
+    border: 1px solid $gray-border;
+    width: 26px;
+    position:relative;
+
+    &.page-prev {
+      .ic-chevron {
+        position:absolute;
+       top: 40.2%;
+  right: -11.4%;
+        transform: rotate(90deg) scale(0.3) translate(-50%,-50%);
+      }
+      margin-right: 24px;
+    }
+
+    &.page-next {
+      .ic-chevron {
+         position:absolute;
+      top: -6.8%;
+  right: -32.5%;
+        transform: rotate(-90deg) scale(0.3) translate(-50%,-50%);
+      }
+      margin-left: 24px;
+    }
+    .ic-chevron {
+      font-size: 20px;
+    }
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+  .page-list {
+    @include flexbox;
+    padding: 0;
+  }
+  .page-item {
+    margin-right: 4px;
+
+    &.is-active {
+      a,
+      button {
+        color: $white !important;
+        background-color: $primary-color;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a,
+    button {
+      @extend %page-item-base;
+      min-width: 26px;
+      padding: 0 4px;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}

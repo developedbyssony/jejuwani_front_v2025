@@ -1,0 +1,92 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/color' as *;
+
+.order-wrap {
+    display: flex;
+    flex-direction: column;
+    background-color: $gray-bgc;
+
+    .order-tit {
+        background-color: $gray-tertiary;
+        padding: 12.5px;
+    }
+
+    @include responsive(D) {
+        flex-direction: row;
+    }
+
+    .order-sec-left,
+    .order-sec-right {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .order-div {
+        padding: 10px;
+
+        .table-row {
+            .heading .cell {
+                display: flex;
+            }
+        }
+    }
+
+    .order-form-div {
+        padding: 16px 10px;
+
+        .first-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+}
+
+.order-top-txt {
+    display: flex;
+}
+
+.order-form-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .check-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+          @include responsive(D) {
+        flex-direction: row;
+    }
+    }
+
+    input {
+        display: inline-block;
+    }
+    label {
+        display: inline-block;
+    };
+
+    @include responsive(D) {
+        flex-direction: row;
+    }
+    p { 
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+            @include responsive(D) {
+        flex-direction: row;
+    }
+    }
+    img {
+        height: 52px;
+        width: 52px;
+                    @include responsive(D) {
+        margin-right:17px;
+                    }
+    }
+}
+

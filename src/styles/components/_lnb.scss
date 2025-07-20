@@ -1,0 +1,205 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/color' as *;
+
+.lnb-list-wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.lnb-list-wrap.on {
+  background-color: $gray-bgc;
+}
+
+.lnb-sorting {
+  display: flex;
+  flex-direction: column;
+  position:relative;
+  max-width: 100px;
+  height: 100%;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  padding-left:none !important;
+  border-radius:12px;
+
+  @include responsive(D) {
+    border-left: 1px solid $gray-border;
+    border-right: 1px solid $gray-border;
+    border-bottom: 1px solid $gray-border;
+    width: 100%;
+    max-width: 240px;
+    border: none;
+    box-shadow: 0px 3px 6px 0px rgba(25, 25, 25, 0.1);
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid $gray-border;
+    background-color: $white;
+    width: 100%;
+    align-items: center;
+  }
+
+  li.on:hover {
+    background-color: #d7d7d7;
+  }
+
+  li:first-child {
+    border-top-right-radius: 12px;
+    border-bottom: none;
+
+    @include responsive(D) {
+      border-top-left-radius: 12px;
+    }
+  }
+
+  li:nth-child(2) {
+    border-bottom: none;
+  }
+
+  li:last-child {
+    border-bottom-right-radius: 12px;
+
+    @include responsive(D) {
+      border-bottom-left-radius: 12px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    @include responsive(D) {
+      justify-content: space-between;
+    }
+  }
+
+  .sort-list {
+    display: none;
+    width: 100%;
+
+    &.on {
+      display: block;
+    }
+
+    .sort-item {
+      width: 100%;
+
+      span {
+        color: #757575;
+      }
+    }
+  }
+
+  .list-icon.arrow {
+    display: none;
+
+    @include responsive(D) {
+      display: flex;
+    }
+  }
+
+  .list-icon.arrow.rotate {
+    transform: rotate(180deg) scale(0.5);
+  }
+
+  .ic-car::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url("../assets/sub/ic_car.png");
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .ic-car::after {
+    content: "";
+
+    @include responsive(D) {
+      position: relative;
+      content: "차량";
+    }
+  }
+
+  .ic-fuel::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url("../assets/sub/ic_fuel.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .ic-fuel::after {
+    content: "";
+
+    @include responsive(D) {
+      position: relative;
+      content: "연료";
+    }
+  }
+
+  .ic-year::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url("../assets/sub/ic_year.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .ic-year::after {
+    content: "";
+
+    @include responsive(D) {
+      position: relative;
+      content: "연식";
+    }
+  }
+
+  .list-icon.arrow {
+    width: 24px;
+    height: 24px;
+    background-image: url("../assets/ico_btn_arrow_down.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: scale(0.5);
+  }
+
+  span {
+    width: 100%;
+
+    @include responsive(D) {
+      padding: 10px 14px;
+    }
+  }
+
+  button {
+    display: none;
+
+    @include responsive(D) {
+      display: flex;
+
+      .on {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

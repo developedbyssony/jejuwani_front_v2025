@@ -1,0 +1,51 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #f7f8fa;
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: -0.01em;
+  width: 100%;
+}
+
+.footer-txtbox {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include responsive(D) {
+    max-width: 1280px;
+  }
+}
+
+.footer-tit a {
+  color: #000;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+}
+
+.footer-info1 a {
+  color: #000;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+}
+
+.footer-tel a {
+  color: #000;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: -0.01em;
+}
+
+.footer-info2 {
+  margin-top: 24px;
+}

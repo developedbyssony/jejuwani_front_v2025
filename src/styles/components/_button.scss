@@ -1,0 +1,157 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/color' as *;
+
+%btn-base {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 0 12px;
+  border-radius: 4px;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.btn-buy {
+  width: 100%;
+
+  @include responsive(D) {
+    width: 80px;
+  }
+}
+
+.btn-sort {
+  @extend %btn-base;
+  color: $white;
+  background-color: #fff;
+  color: $black;
+  margin-bottom: 12px;
+
+  // state
+  &:not(:disabled):hover {
+    background-color: $gray-bgc;
+    color: $black;
+  }
+}
+
+.btn-round {
+  border-radius: 999px;
+}
+
+.btn-red {
+  background-color: $red;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 39px;
+  border-radius:4px;
+  margin-top:20px;
+}
+
+.btn-red:hover {
+  cursor: pointer;
+  color: gray;
+  background-color: #911c1b;
+}
+
+.btn-primary {
+  @extend %btn-base;
+  color: $white;
+  background-color: $black;
+}
+
+.btn-ghost {
+  @extend %btn-base;
+  color: $primary-color;
+  background-color: transparent;
+
+  // state
+  &:not(:disabled):hover {
+    color: $gray-tertiary;
+  }
+}
+
+.btn-secondary {
+  @extend %btn-base;
+  color: $white;
+  background-color: $primary-color;
+  cursor: pointer;
+  border: none !important;
+  color: #000;
+  font-weight: 600;
+
+  // state
+  &:not(:disabled):hover {
+    background-color: $primary-color;
+  }
+}
+
+.btn-outlined {
+  @extend %btn-base;
+  color: #000;
+  background-color: $white;
+  border: 1px solid #000;
+
+  // state
+  &:not(:disabled):hover {
+    background-color: $gray-tertiary;
+  }
+}
+
+// size
+.btn-40 {
+  font-size:18px;
+  height: 40px;
+}
+
+.btn-55 {
+  font-size:18px;
+  height: 55px;
+}
+
+.clicked {
+  background-color: $primary-color;
+  color: #fff;
+}
+
+.btn-s40 {
+  font-size: 15px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+
+  span {
+    color: $gray-dark;
+  }
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+
+  a,.margin-right {
+    width:100%;
+  }
+
+  button:first-child {
+    margin-bottom: 10px;
+    width:100%;
+  }
+
+  @include responsive(D) {
+    width: 100%;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+#btn-buy {
+  width: 100%;
+}

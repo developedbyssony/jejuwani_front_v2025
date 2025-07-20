@@ -1,0 +1,331 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/color' as *;
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include responsive(D) {
+    width: 467px;
+    margin: 0 auto;
+  }
+}
+
+.drop-menu {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.dropdown-menu {
+  width: 100%;
+}
+
+.signup-tit2 {
+  margin-top: 90px;
+}
+
+.signup-form input {
+  border: 1px solid #ddd;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.btn.dropdown-toggle {
+  width: 100vh;
+}
+
+.signup-title {
+  display: flex;
+  flex-direction: column;
+  color: $black;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  margin-bottom: 37px;
+}
+
+.signup-title::after {
+  content: "";
+  margin-top: 10px;
+  position: relative;
+  width: 470px;
+  height: 1px;
+  background-color: #ddd;
+  opacity: 0.4;
+}
+
+.signup-tit2 {
+  color: #4e6a75;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  margin-bottom: 37px;
+}
+
+.page-tit {
+  color: #000;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: -0.01em;
+  margin-top: 42px;
+  margin-bottom: 17px;
+}
+
+.jejuwn-ci {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.login-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rule-sign-up-box {
+  padding: 30px;
+  height: 300px;
+  overflow: scroll;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #b2b3b9;
+  margin-top: 25px;
+  margin-bottom: 17px;
+  text-wrap: wrap;
+  overflow-x: hidden;
+  color: gray;
+}
+
+.rule-sign-up-box .rule-txt p,
+.rule-sign-up-box .rule-txt ul li {
+  white-space: pre-line;
+  line-height: 160%;
+}
+
+.rule-sign-up-box .rule-txt strong {
+  line-height: 210%;
+}
+
+.signup-input-tit {
+  display: flex;
+  margin-top: 17px;
+  margin-bottom: 12px;
+  font-weight: bolder;
+  float: left;
+}
+
+.gender-checkBox {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  gap: 13.25px;
+}
+
+-bottom {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.gender-checkBox p {
+  position: relative;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  display: inline-block;
+  border: 1px solid #cdcdcd;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+input[type="checkbox"]:checked {
+  border: 1px solid #428ef9;
+  background-color: #428ef9;
+  background-image: url("../assets/sub/checkbox.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#check-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: fit-content;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.radio-txt {
+  position: relative;
+  text-align: center;
+}
+
+.gender-checkBox .jeju-man-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;}
+
+.gender-checkBox .jeju-woman-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    align-items:center;
+
+}
+
+.tel-box {
+  display: flex;
+  flex-direction: row;
+  width: 467px;
+}
+
+.phone {
+  width: 113px;
+  height: 63px;
+}
+
+.jejuwn-rule-img {
+  position: relative;
+  top: -50px;
+  background-image: url("./assets/sub/user-rule.png");
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(0.6);
+}
+
+.ic-man {
+  background: url("../assets/ic-man.png") no-repeat center center / contain;
+  width: 63px;
+  height: 63px;
+}
+
+.ic-woman {
+  background: url("../assets/ic-woman.png") no-repeat center center / contain;
+  width: 63px;
+  height: 63px;
+}
+
+#signUpbtn {
+  margin-top: 52px;
+  color: #000;
+}
+
+.drop-menu {
+  width: 470px;
+}
+
+.dropdown button {
+  width: 470px;
+  height: 63px;
+}
+
+.form-select {
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  width: 100%;
+  font-size: 16px;
+  line-height: 120%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8.5px 8px;
+  cursor: pointer;
+  span {
+    text-wrap:nowrap;
+  }
+}
+
+.form-select:after {
+  content:'';
+  display:block;
+  position:absolute;
+  background:url('../assets/ico_btn_arrow_down.png') no-repeat 0 0 /contain;
+  top: 45.0%;
+  right: 12.5px;
+  width: 15px;
+  height: 15px;
+  transition: transform 0.35s ease-in-out;
+}
+
+.form-select.rotate::after {
+  transform:rotate(180deg);
+}
+
+.panel {
+  padding-left:0;
+}
+
+.panel.combo {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 38.5px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  z-index: 999;
+
+  .combo-item {
+    padding: 15px 15px;
+
+    &:hover {
+      background-color: #e2f4f1;
+      color: #000;
+    }
+  }
+}
+
+.panel.combo.on {
+  display: block;
+}
+
+.select-group {
+  position: relative;
+  top: 8px;
+  right: 0;
+}
+
+.section-optional-info {
+  display: flex;
+  flex-direction: column;
+}
+
+#uploadBtn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  @include responsive(D) {
+    width: auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 300px;
+  }
+}
+
+#mandatory-select {
+  margin-bottom: 0px;
+  width: 100%;
+  cursor:pointer;
+}
+
+.signUp-logo {
+  background: url("../assets/svg/signUpTitle.svg") no-repeat center center;
+  width: 289px;
+  height: 77px;
+  margin: 0 auto;
+}

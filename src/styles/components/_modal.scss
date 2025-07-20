@@ -1,0 +1,267 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../base/color' as *;
+
+.moal-wrapper {
+  overflow: auto;
+  height: 100%;
+  width:100%;
+}
+
+.modal-bgc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow-y: hidden;
+}
+
+.modal-ticket {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 30px);
+  height: 657px;
+  @include responsive(T) {
+    width:457px;
+  }
+}
+
+.modal-ticket-box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url( "../assets/sub/ticket.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 3px;
+  padding: 37px 26px 36px 26px;
+
+  .modal-ticket-con {
+    margin-top: 127.13px;
+  }
+
+  .modal-btn-close {
+    position: relative;
+    text-align: right;
+    cursor: pointer;
+  }
+
+  .modal-bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+
+    .btn-group {
+      background-color: #5c7a89;
+      height: 80px;
+      padding: 10px;
+      width: 100%;
+
+      button {
+        text-align: center;
+        color: #fff;
+        font-weight: 800;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: flex;
+  border-radius: 4px;
+  background-color: #fff;
+  width: 738px;
+  height: 523px;
+  padding: 40px;
+}
+
+.modal-header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: none;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 15px;
+
+    li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+
+      &:first-child {
+        justify-content: space-between;
+      }
+
+      align-items: center;
+    }
+  }
+}
+
+.modal-con-wrap {
+  overflow-x: hidden;
+}
+
+.datePicker {
+  position: relative;
+  font-size: 16px;
+  padding: 8.5px 8px 8.5px 36px;
+  border-radius: 3px;
+  width: 100%;
+  border: 1px solid #cdcdcd;
+  color: #cdcdcd;
+  float: right;
+  cursor: pointer;
+}
+
+.datePckerWrap {
+  position:relative;
+  width:100%;
+}
+
+.react-datepicker-wrapper {
+  width:100%;
+}
+
+.react-datepicker-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: url("../assets/icon/calendar.png") no-repeat 0 0 / contain;
+  margin-top: 6.5px;
+  margin-left: 8px;
+  transform: scale(0.9);
+}
+.datepickers {
+  margin-top: 18px;
+  width: 100%;
+}
+
+.date-picker-start,
+.date-picker-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#modal-order-form {
+  position: relative;
+  left: 50%;
+  top: 67%;
+  transform: scale(0.6);
+}
+
+.date-picker-end {
+  margin-top: 15px;
+}
+
+/* cart-modal */
+.cart-modal {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  padding: 32px;
+  max-width: 360px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.18);
+}
+
+.cart-tit {
+  color: #000;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.btn-group-cart {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.btn-group-cart a {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-group-cart div {
+  width: 100%;
+}
+
+#modal-header-top {
+  position: absolute;
+  display: flex;
+}
+
+.reservation-date {
+  position: absolute;
+  top: 66px;
+}
+
+.reservation-data1 {
+  position: relative;
+  left: 0px;
+  text-align: left;
+  white-space: normal;
+}
+
+#modal-header1 {
+  position: block;
+  display: flex;
+  flex-flow: flex-start;
+  margin-top: 250px;
+}
+
+.react-datepicker {
+  left: -50%;
+}
+
+.react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker__triangle::after {
+  left: 10px;
+}
+
+.react-datepicker-popper[data-placement^="bottom"]
+  .react-datepicker__triangle::before {
+  left: 10px;
+}

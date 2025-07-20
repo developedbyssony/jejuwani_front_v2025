@@ -1,0 +1,154 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+
+.table-re {
+  display: table;
+  width: 100%;
+  border-spacing: 0 0;
+  overflow: visible;
+}
+
+.table-re thead {
+  display: none;
+
+  th {
+    padding: 11px 15px;
+    border-bottom: 1px solid #000;
+  }
+
+  @include responsive(T) {
+    display: table-row;
+    border-bottom: 1px solid #000;
+  }
+
+  @include responsive(D) {
+    display: table-row;
+    position: relative;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.table-re tbody tr {
+  &:last-child {
+    border-bottom: none;
+
+    .table-col {
+      @include responsive(T) {
+        border-bottom: 1px solid #ddd;
+      }
+    }
+  }
+
+  .table-col {
+    padding: 11px 15px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+
+    &:nth-child(2):hover {
+      text-decoration: underline;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid #000;
+
+      @include responsive(T) {
+        border-bottom: 1px solid rgb(204, 204, 204);
+      }
+    }
+
+    @include responsive(T) {
+      width: inherit;
+      max-width: 400px;
+    }
+  }
+}
+
+.table-re colgroup col {
+  @include responsive(D) {
+    &:first-child {
+      width: 5%;
+    }
+
+    &:nth-child(2) {
+      width: 45%;
+    }
+
+    &:nth-child(3) {
+      width: 10%;
+    }
+
+    &:nth-child(4) {
+      width: 10%;
+    }
+
+    &:nth-child(5) {
+      width: 10%;
+    }
+
+    &:nth-child(6) {
+      width: 10%;
+    }
+
+    &:last-child {
+      width: 10%;
+    }
+  }
+}
+
+.table-re tbody tr th,
+.table-re tbody tr td {
+  display: flex;
+
+  @include responsive(T) {
+    display: table-cell;
+  }
+}
+
+.table-tr th,
+td {
+  &:last-child {
+    @include responsive(D) {
+      border-bottom: none;
+    }
+  }
+}
+
+.fOUBlo {
+  width: auto !important;
+}
+
+.activity-landmark,
+.restaurant-landmark {
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  width: 1440px;
+  margin: 0 auto;
+}
+
+
+.activity-landmark {
+  background-image: url('../assets/sub/board/activity.png');
+}
+
+.restaurant-landmark {
+  background-image: url('../assets/sub/board/restaurant.png');
+  background-position: top -500px center;
+}
+
+.landmark-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #55A9F3;
+}
+
+.landmark-wrap.rest {
+  background-color: #F6CB8D;
+}

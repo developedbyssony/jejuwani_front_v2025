@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "블로그제목블로그제목블로그",
+    "nick": "유저닉네임유저닉네임",
+    "uid": "(userID)",
+    "category": 1,
+    "imgSrc": "/assets/sub/blog_thum/blog-thum5.jpg",
+    "link": 1
+  },
+  {
+    "id": 2,
+    "title": "윤제주",
+    "nick": "유저닉네임유저닉네임",
+    "uid": "(userID)",
+    "category": 2,
+    "imgSrc": "/assets/sub/blog_thum/yourblog-profile.png",
+    "link": "https://www.youtube.com/channel/UCLK5Y0VMkYgqQozX-ahDD1A"
+  },
+  {
+    "id": 3,
+    "title": "제주앓이",
+    "nick": "유저닉네임유저닉네임",
+    "uid": "(userID)",
+    "category": 6,
+    "imgSrc": "/assets/sub/blog_thum/blog-thum62.jpg",
+    "link": "https://blog.naver.com/risingyou21"
+  },
+  {
+    "id": 4,
+    "title": "뭐랭하맨",
+    "nick": "유저닉네임유저닉네임",
+    "uid": "(userID)",
+    "category": 1,
+    "imgSrc": "/assets/sub/blog_thum/blog-thum1.webp",
+    "link": "https://www.youtube.com/@whats_mean"
+  },
+  {
+    "id": 5,
+    "title": "설이오빠",
+    "nick": "유저닉네임유저닉네임",
+    "uid": "(userID)",
+    "category": 2,
+    "imgSrc": "/assets/sub/blog_thum/blog-thum3.jpg",
+    "link": "https://www.youtube.com/channel/UC0W9RnpTwabuueyqGQkaleA"
+  },
+  {
+    "id": 6,
+    "title": "비터팬",
+    "nick": "유저닉네임유저닉네임",
+    "uid": "(userID)",
+    "category": 1,
+    "imgSrc": "/assets/sub/blog_thum/blog-thum84.jpg",
+    "link": "https://blog.naver.com/bitterpan/"
+  },
+  {
+    "id": 6,
+    "title": "김나영",
+    "nick": "유저닉네임유저닉네임",
+    "uid": "(userID)",
+    "category": 2,
+    "imgSrc": "/assets/sub/blog_thum/main-blog19.jpg",
+    "link": "https://www.youtube.com/@nofilterTV"
+  },
+  {
+    "id": 6,
+    "title": "블로그제목블로그제목블로그",
+    "nick": "유저닉네임유저닉네임",
+    "uid": "ididid",
+    "category": 3,
+    "imgSrc": "/assets/sub/blog_thum/blog-thum51.jpg",
+    "link": 0
+  },
+  {
+    "id": 6,
+    "title": "블로그제목블로그제목블로그",
+    "nick": "유저닉네임유저닉네임",
+    "uid": "(userID)",
+    "category": 1,
+    "imgSrc": "/assets/sub/blog_thum/main-blog23.png",
+    "link": 0
+  },
+  {
+    "id": 7,
+    "title": "블로그제목블로그제목블로그",
+    "nick": "유저닉네임유저닉네임",
+    "uid": "(userID)",
+    "category": 5,
+    "imgSrc": "/assets/sub/blog_thum/main-blog16.jpg",
+    "link": 0
+  }
+]

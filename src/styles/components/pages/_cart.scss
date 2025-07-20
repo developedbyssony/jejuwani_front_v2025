@@ -1,0 +1,167 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../base/color' as *;
+
+.cart-item {
+  position: relative;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #b2b3b9;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  width: 100%;
+
+  @include responsive(D) {
+    flex-direction: row;
+  }
+}
+
+.cart-item-txt {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap:8px;
+
+  @include responsive(D) {
+    width:100%;
+    justify-content: space-between;
+  }
+}
+
+.cart-item-txt-wrap > span {
+  margin-bottom:4px;
+}
+
+
+.cart-item-img {
+  width: 300px;
+  height: 300px;
+  margin-right: 30px;
+  border: 1px solid gray;
+}
+
+.ml-4 {
+  padding-top: 10px;
+  font-weight: 800;
+  color: #5c7a89;
+}
+
+.ml-4 strong {
+  padding-left: 2px;
+  color: #5c7a89;
+}
+
+.cart-title p {
+  position: relative;
+  top: 30px;
+  margin-top: 20px;
+  right: 645%;
+}
+
+.cart-item-count {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.cart-item-btn-sec {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  @include responsive(D) {
+    align-items:flex-end;
+  }
+}
+
+.remove-btn {
+  margin-top: 20px;
+  margin-bottom: 20px;
+    @include responsive(D) {
+    margin-bottom:0px !important;
+
+    }
+}
+
+.empty-cart {
+  height: 400px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  color: #b2b3b9;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #b2b3b9;
+}
+
+.empty-cart p {
+  margin-top: 20px;
+  color: #ddd;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.likeUnitwrapper {
+  background-color: #f7f8fa;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0px 3px 6px 0px rgba(25, 25, 25, 0.1);
+  margin-bottom: 100px;
+}
+
+.amount-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-sumcount {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-bottom: 23px;
+
+  @include responsive(D) {
+    margin-bottom: 0px;
+  }
+}
+
+.buyBtn-section {
+  width: 100%;
+
+  @include responsive(D) {
+    width: auto;
+    display:flex;
+    justify-content:flex-end;
+  }
+}
+
+.countWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+
+  @include responsive(D) {
+    flex-direction: row;
+  }
+}
+
+.decrease-btn, .increase-btn {
+width: 24px;
+height: 24px;
+border:1px solid $gray-border;
+border-radius:4px;
+}
+
+.decrease-btn {
+  margin-right:10px;
+}
+
+.increase-btn {
+  margin-left:10px;
+}
