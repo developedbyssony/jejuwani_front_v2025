@@ -143,6 +143,7 @@
   height: 100%;
   margin-bottom: 40px;
   width: 100%;
+  padding:20px;
 
   .section-top-sorting {
     display: flex;
@@ -412,7 +413,13 @@
 }
 
 .wrap-row {
+    display: flex;
+    flex-direction: column;
   width: 100%;
+
+  @include responsive(D) {
+
+  }
 }
 
 .carSafeSec {

@@ -19,10 +19,6 @@
     align-items: center;
   }
 
-  .order-list:last-child {
-    margin-top: 76.87px;
-  }
-
   .order-inputs {
     width: 100%;
 
@@ -42,7 +38,9 @@
     }
 
     .select-group {
-      margin-bottom: 8px;
+      option {
+        padding:0px;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -91,11 +89,6 @@
     display: flex;
     margin-top:35px;
 
-          .product-img-detail-activity,
-      .product-img-detail-restaurant { 
-        margin-bottom:35px;
-      }
-
     @include responsive(D) {
       flex-direction: row !important;
       justify-content: center;
@@ -104,8 +97,6 @@
       .product-img-detail-activity,
       .product-img-detail-restaurant {
         width: 845px;
-        height: 550px;
-        margin-bottom:35px;
       }
 
       .product-order {
@@ -159,10 +150,16 @@
     margin-bottom: 5px;
   }
 }
+.order-wrap {
+  width: 100%;
+      .num {
+      margin-right:40px;
+      float:left;
+    }
+}
 
 .order-form .order-inputs {
   .select-group {
-    margin-bottom: 8px;
 
     &:last-child {
       margin-bottom: 0;

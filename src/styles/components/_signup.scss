@@ -236,6 +236,7 @@ input[type="checkbox"]:checked {
 
 .form-select {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content:space-between;
   width: 100%;
@@ -272,7 +273,6 @@ input[type="checkbox"]:checked {
 
 .panel.combo {
   display: none;
-  position: absolute;
   width: 100%;
   top: 38.5px;
   border: 1px solid #ddd;
@@ -290,12 +290,12 @@ input[type="checkbox"]:checked {
 }
 
 .panel.combo.on {
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .select-group {
   position: relative;
-  top: 8px;
   right: 0;
 }
 

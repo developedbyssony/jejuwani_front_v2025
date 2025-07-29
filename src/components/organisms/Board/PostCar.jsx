@@ -41,7 +41,7 @@ const posts = ({ posts }) => {
                             />
                         </div>
                         <div className="productUnit-contents">
-                            <div className="rightList" style={{ display: "flex", gap: "26px" }}>
+                            <div className="rightList">
                                 <div className="wrap-col">
                                     <div className="productUnit-contents-tit">
                                         <div className="productLeft">
@@ -53,7 +53,8 @@ const posts = ({ posts }) => {
                                                 >
                                                     {post.name}
                                                 </p>
-                                                <p className="unit-tit text-style-13 tag-company">
+                                                <p className="text-style-13 tag-company"
+                                                    style={{ marginLeft:"6px"}}>
                                                     {post.company}
                                                 </p>
                                             </div>
@@ -62,7 +63,7 @@ const posts = ({ posts }) => {
                                     <div className="productUnit-contents-bottom" style={{ display: "flex", flexDirection: "column" }}>
                                         <div className="productLeft">
                                             <span className="price-20">{post.price}</span>
-                                            <ul className="text-style-13" style={{ paddingLeft: "0px", margin: "8px 0" }}>
+                                            <ul className="text-style-13" style={{ display:"flex",paddingLeft: "0px", margin: "8px 0" }}>
                                                 <li>{post.type}</li>
                                                 <li>{post.fuel}</li>
                                                 <li>{post.option}</li>

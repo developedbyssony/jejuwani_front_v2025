@@ -29,8 +29,8 @@ function KakaoMapRestaurant({ latitude, longitude, title }) {
   })
   return (
     <>
-      <div class="section" style={{ overflow: "hidden" }}>
-        <div id="staticMap" style={{ width: "100%", height: "40vh" }}></div>
+      <div className="section" style={{ overflow: "hidden" }}>
+        <div id="staticMap" style={{ width: "100%", height: "30vh" }}></div>
       </div>
     </>
   );

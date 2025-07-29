@@ -25,7 +25,7 @@ function CartItem({
                 id: it.id,
                 price: it.price,
                 title: it.title,
-                count: it.count,
+                count: it.count
             };
         });
         if (data.length === 0) {
@@ -55,7 +55,7 @@ function CartItem({
     return (
         <>
             {cartItems.map((i, idx) => (
-                <li li className="cart-item">
+                <li className="cart-item">
                     <div className="cart-item-txt">
                         <div className="cart-item-txt-wrap">
                             <span>상품번호 {i.id || i.product_id}</span>
@@ -63,7 +63,7 @@ function CartItem({
                         </div>
 
                         <p className="price-32">
-                            {i.price * i.count}
+                            {(i.price * i.count).toLocaleString('ko-KR')}
                             <span className="currency">원</span>
                         </p>
                         <div className="cart-item-count">

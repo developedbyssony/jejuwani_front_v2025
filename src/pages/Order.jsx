@@ -150,7 +150,7 @@ function orderSheet() {
                                                     <div className="heading">
                                                         <div class="cell">
                                                             <p>가격</p>
-                                                            <p>{a.price}</p>
+                                                            <p>{(a.price).toLocaleString('ko-KR')}</p>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -197,7 +197,7 @@ function orderSheet() {
                                                         <Input
                                                             type={"text"}
                                                             name={"buyer_addr"}
-                                                            placeholder={"서울시 도봉구"}
+                                                            placeholder={"서울시 영등포구"}
                                                             parentFunction={parentFunction}
                                                             ref={raddr}
                                                         />

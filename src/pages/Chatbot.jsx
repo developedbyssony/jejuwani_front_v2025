@@ -84,16 +84,18 @@ export default function car() {
                 <div className="section-main-activity-sorting">
                     <ul className="section-top-sorting">
                         <li>
+                            {/*
                             <h1 className="page-tit">
-                                AI 챗봇
+                               AI 챗봇
                             </h1>
+                            */}
                         </li>
                     </ul>
                 </div>
                 <div className="section car">
                     <div className="content-display">
-                        <div className="section-main-activity-sorting">
-                            <h1>새로운 기능을 준비중입니다.</h1>
+                        <div className="section-main-activity-sorting" style={{display:"flex",justifyContent:"center"}}>
+                            <img src="../assets/sub/excuse.png" alt="기능을 준비 중입니다." />
                         </div>
                     </div>
                 </div>

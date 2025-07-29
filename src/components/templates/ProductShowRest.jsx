@@ -4,10 +4,6 @@ import KakaoMapRestaurant from "../../service/kakaoMapRestaurant.jsx";
 import Rating from "../atoms/Star.jsx";
 
 function productShow2({ serverURL, product_info, review }) {
-    useEffect(() => {
-        console.log(product_info);
-        console.log(review);
-    }, []);
 
     let [heart, setheart] = useState([false]);
     let [product, setProduct] = useState({
@@ -60,11 +56,11 @@ function productShow2({ serverURL, product_info, review }) {
                                 src={product.imgSrc}
                                 alt="맛집이미지"
                                 id="img-restaurant"
-                                style={{ width: "100%", height: "auto", objectFit: "cover" }}
+                                style={{ width: "100%", height: "100%", objectFit: "cover" }}
                             />
                         </div>
                         <div className="product-order">
-                            <div class="product-info">
+                            <div className="product-info">
                                 <div className="product-info-header">
                                     <a className="tag" href="/">
                                         {product.category === "2" && (
@@ -82,6 +78,7 @@ function productShow2({ serverURL, product_info, review }) {
                                             <h1
                                                 className={heart ? "heartNotActive" : "heartActive"}
                                                 onClick={ontoggle}
+                                                style={{filter:"invert(0)"}}
                                             ></h1>
                                             <span>{product.likes}</span>
                                         </div>

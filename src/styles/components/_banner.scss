@@ -30,16 +30,25 @@
     }
   }
 
+  .cls_bottom {
+    display: flex;
+    input {
+      margin-right:6px;
+    }
+  }
+
   .cls_wrap {
     display: flex;
     justify-content: flex-end;
     color: #fff;
 
     form {
-      margin: 0;
+      margin: 5px 5px;
       padding: 0;
 
-      label {}
+      label {
+        margin-right:5px;
+      }
 
       span {
         cursor: pointer;

@@ -32,7 +32,8 @@ const Dropdown = () => {
       <div className="drop_wrap">
         <a aria-label="PC 최상단 배너" href="#"></a>
         <div className="cls_wrap">
-          <form action="">
+          <form action="" className="cls_bottom">
+            <input type="checkbox"></input>
             <label htmlFor="">
               오늘 그만 보기
             </label>

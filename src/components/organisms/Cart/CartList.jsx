@@ -21,10 +21,11 @@ function CartList({
                     id: it.id,
                     price: it.price,
                     title: it.title,
-                    count: 1,
+                    count: it.count
                 };
             });
         }
+        console.log(cartItem);
     });
 
     return (

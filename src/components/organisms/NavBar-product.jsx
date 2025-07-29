@@ -142,7 +142,7 @@ function productDetailNavBar({ product, review }) {
                                             <li>실방문 확인 | 실방문자 리뷰 등록</li>
                                             <li>사진권한 | 사진 열람 및 사용 권한</li> <br />
                                             <span>
-                                                1.실방문자 리뷰 등록 : 제주완니 서비스를 통핸 매장 이용
+                                                1.실방문자 리뷰 등록 : 제주완니 서비스를 통해 매장 이용
                                                 고객만 리뷰 작성 가능
                                             </span>{" "}
                                             <br />

@@ -19,10 +19,9 @@ function my({ serverURL, userId }) {
                     id: it.product_id || it.id,
                     price: it.price,
                     title: it.title,
-                    count: 1,
+                    count: it.count
                 };
             });
-
             setCartItems(newCartItem);
         }
     }, []);
@@ -73,15 +72,14 @@ function my({ serverURL, userId }) {
         console.log("삭제");
     };
 
-    function cart(productId, productTitle, productPrice) {
+    function cart(productId, productTitle, productPrice,productCount) {
         console.log("클릭");
-        const count = 1;
         const newCart = [
             {
                 id: productId,
                 title: productTitle,
                 price: productPrice,
-                count: count,
+                count: productCount,
             },
         ];
         setCartItems([newCart, ...cartData]);

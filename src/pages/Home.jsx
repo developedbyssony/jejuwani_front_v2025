@@ -8,6 +8,7 @@ import activityData from "../dummy/Activity_sample.json";
 import restaurantsData from "../dummy/Restaurants_sample.json";
 import mainBlogData from "../dummy/MainBlogData.json";
 import ProductUnit from "../components/molecules/CardItemBlog";
+import Quick from '../components/molecules/QuickMenu';
 
 const Home = () => {
     useEffect(() => {
@@ -142,6 +143,7 @@ const Home = () => {
 
     return (
         <>
+            <Quick></Quick>
             <div className="mainSlide">
                 <Slide1></Slide1>
             </div>
@@ -156,7 +158,7 @@ const Home = () => {
                             <span>후회할 제주 체험</span>
                         </p>
                     </div>
-                    <div className="section-main-activity-sorting" id="main-sorting">
+                    <div className="section-main-activity-sorting" id="main-sorting" style={{padding:"0px"}}>
                         {["전체", "제주시", "서귀포시", "섬 속의 섬"].map((region) => (
                             <button
                                 key={region}

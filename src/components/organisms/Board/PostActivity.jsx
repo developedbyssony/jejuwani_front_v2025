@@ -25,7 +25,7 @@ const Tg = styled.td`
   display: block;
   width: 200px;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: visible;
   text-overflow: ellipsis;
   padding-left: 0;
 `;
@@ -78,9 +78,9 @@ const posts = ({ posts, loading, reverse }) => {
                         <td className="table-col">
                             <Tg>
                                 {post.tag.split(',').slice(0, 4).map((el, index) =>
-                                    <strong className="tag-sale text-style-13" style={{ marginRight: "7px" }}>
+                                    <span className="tag-sale text-style-13" style={{ marginRight: "7px" }}>
                                         {el.trim()}
-                                    </strong>
+                                    </span>
                                 )}
                             </Tg>
                         </td>

@@ -90,7 +90,13 @@
       gap: 56.5px;
 
       .rightList {
+        display: flex;
         width: 100%;
+        flex-direction: column;
+        gap:26px;
+        @include responsive(D) {
+          flex-direction: row;
+        }
 
         .productUnit-contents-tit {
           position: relative;

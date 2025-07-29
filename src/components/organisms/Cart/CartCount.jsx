@@ -30,7 +30,7 @@ function CartCount({ item }) {
                             <div className="price-sumcount">
                                 <p className="amount-bottom">
                                     <span className="text-style-20">Total</span>
-                                    <span className="currency"> {wholeCountNum || 0}원</span>
+                                    <span className="currency"> {wholeCountNum.toLocaleString() || 0}원</span>
                                 </p>
                             </div>
                         </div>
