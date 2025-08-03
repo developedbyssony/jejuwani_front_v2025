@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import CartList from "../components/organisms/Cart/CartList";
+import CartItem from "../components/organisms/Cart/CartItem";
 import CartList_empty from "../components/organisms/Cart/CartListEmpty";
 import CartCount from "../components/organisms/Cart/CartCount";
 
@@ -72,26 +72,6 @@ function my({ serverURL, userId }) {
         console.log("삭제");
     };
 
-    function cart(productId, productTitle, productPrice,productCount) {
-        console.log("클릭");
-        const newCart = [
-            {
-                id: productId,
-                title: productTitle,
-                price: productPrice,
-                count: productCount,
-            },
-        ];
-        setCartItems([newCart, ...cartData]);
-        console.log(cartData);
-        localStorage.setItem("cartItem", JSON.stringify(newCart));
-        let entryArr = localStorage.getItem("cartState")
-            ? JSON.parse(localStorage.getItem("cartState"))
-            : [];
-        if (entryArr == null) entryArr = [];
-        entryArr.push(newCart);
-        localStorage.setItem("newCartState", JSON.stringify(cartData));
-    }
 
     return (
         <>
@@ -102,8 +82,8 @@ function my({ serverURL, userId }) {
                         {isItEmpty ? (
                             <CartList_empty />
                         ) : (
-                            <CartList
-                                cartItem={cartData}
+                            <CartItem
+                                item={cartData}
                                 onRemove={onRemove}
                                 onIncrease={onIncrease}
                                 onDecrease={onDecrease}

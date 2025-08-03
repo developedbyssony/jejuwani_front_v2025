@@ -1,15 +1,40 @@
-@use '../../abstracts/variables' as *;
-@use '../../abstracts/mixins' as *;
-@use '../../base/color' as *;
+@use "../../abstracts/variables" as *;
+@use "../../abstracts/mixins" as *;
+@use "../../base/color" as *;
 
 .order-wrap {
     display: flex;
     flex-direction: column;
-
-    .order-tit {
-        background-color: $gray-tertiary;
+        .order-tit {
+        background-color:$gray-border;
         padding: 12.5px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
+.order-sec-left {
+    .order-tit:before {
+        content: '';
+        display: inline-block;
+        background-image: url('../assets/icon/voucher.png');
+        background-size: cover;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.order-sec-right {
+    .order-tit:before {
+        content: '';
+        display: inline-block;
+        background-image: url('../assets/icon/complete.png');
+        background-size: cover;
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
 
     @include responsive(D) {
         flex-direction: row;
@@ -23,7 +48,8 @@
     }
 
     .order-div {
-        padding: 10px;
+        padding: 10px 10px 25px 10px;
+        border-bottom:1px solid $gray-border;
 
         .table-row {
             .heading .cell {
@@ -45,7 +71,40 @@
 
 .order-top-txt {
     display: flex;
-}
+    align-items: center;
+    gap: 7px;
+    margin-bottom:9px;
+    .text-style-13 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 29px;
+        border-radius: 4px;
+        border: 1px solid #000;
+        background: #000;
+        color:#fff;
+        font-size: 13px;
+        width: 56px;
+        height: 20px;
+        margin-top:3px;
+    }
+    .heading {
+        margin-top:4px;
+        .cell:first-child {
+            span:nth-child(2):after {
+                content: '  |';
+            }
+        }
+    }
+
+    .heading:nth-child(3) {
+                .cell:first-child {
+            span:nth-child(2):after {
+                content: none;
+            }
+        }
+    }
+} 
 
 .order-form-message {
     display: flex;
@@ -57,9 +116,27 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-          @include responsive(D) {
-        flex-direction: row;
-    }
+        #agree {
+            margin:20px 20px;
+        }
+        label {
+            margin-bottom:20px;
+                    @include responsive(D) {
+                        margin-bottom:0px;
+                    }
+        }
+        .text-style-16 {
+            display: inline-block;
+            width: 170px;
+            height: 38px;
+                    @include responsive(D) {
+                        width: auto;
+                        height: auto;
+                    }
+        }
+        @include responsive(D) {
+            flex-direction: row;
+        }
     }
 
     input {
@@ -67,25 +144,33 @@
     }
     label {
         display: inline-block;
-    };
+    }
+
+    button {
+        width: 100%;
+            @include responsive(D) {
+                width:auto;
+            }
+    }
 
     @include responsive(D) {
         flex-direction: row;
     }
-    p { 
+    p {
         display: flex;
         align-items: center;
         flex-direction: column;
-            @include responsive(D) {
-        flex-direction: row;
-    }
+        @include responsive(D) {
+            flex-direction: row;
+        }
     }
     img {
+        margin-top:20px;
         height: 52px;
         width: 52px;
-                    @include responsive(D) {
-        margin-right:17px;
-                    }
+        @include responsive(D) {
+            margin-right: 17px;
+            margin-top:0px;
+        }
     }
 }
-

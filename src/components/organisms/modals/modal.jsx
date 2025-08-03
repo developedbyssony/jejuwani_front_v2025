@@ -45,14 +45,14 @@ const modal = ({ modalClose, id, title, region, price }) => {
   function modalClick(e) {
     e.preventDefault();
 
-    if (amount.current.value < 1) {
+    if (quantity < 1) {
       alert("수량을 선택해주세요.");
     } else {
       const newData = [
         {
           id: 1,
           title: title,
-          count: amount.current.value,
+          count: quantity,
           price: price,
         },
       ];

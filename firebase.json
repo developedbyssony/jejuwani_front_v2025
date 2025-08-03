@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "target": "jjwn",
     "public": "dist",
     "ignore": [
       "firebase.json",

@@ -1,5 +1,6 @@
 //import axios from "axios";
 import { useState, useEffect, useRef } from "react";
+import CartCount from "./CartCount";
 import CartList_empty from "./CartListEmpty";
 
 function CartItem({

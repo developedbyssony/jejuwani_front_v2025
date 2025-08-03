@@ -129,28 +129,29 @@ function orderSheet() {
                                             {item.map((a, idx) => (
                                                 <li className="table-row">
                                                     <div className="order-top-txt">
+                                                    <a class="text-style-13">관광지</a>
                                                     <div className="heading">
                                                         <div class="cell">
-                                                            <p>상품번호</p>
-                                                            <p>{a.id}</p>
+                                                            <span>상품번호</span>
+                                                            <span>{a.product_id || a.id}</span>
                                                         </div>
                                                     </div>
                                                     <div className="heading">
                                                         <div class="cell">
-                                                            <p>수량</p>
-                                                            <p>{a.count}</p>
+                                                            <span>수량</span>
+                                                            <span>{a.count}</span>
                                                         </div>
                                                     </div>
                                                     </div>
                                                     <div className="heading">
                                                         <div class="cell">
-                                                            <p className="text-style-20">{a.title}</p>
+                                                            <p className="text-style-24">{a.title}</p>
                                                         </div>
                                                     </div>
                                                     <div className="heading">
-                                                        <div class="cell">
-                                                            <p>가격</p>
+                                                        <div class="cell price-32">
                                                             <p>{(a.price).toLocaleString('ko-KR')}</p>
+                                                                                        <span className="currency">원</span>
                                                         </div>
                                                     </div>
                                                 </li>
@@ -219,7 +220,7 @@ function orderSheet() {
                                                             <div className="check-wrap">
                                                             <input type="checkbox" name="agree" id="agree" />
                                                             <label htmlFor="agree">
-                                                                <span>주문 내용을 확인하였으며, 정보 제공 등에 동의합니다.</span>
+                                                                <span className="text-style-16">주문 내용을 확인하였으며, 정보 제공 등에 동의합니다.</span>
                                                             </label>
                                                             </div>
                                                         </p>

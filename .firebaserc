@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "jeju2025-5e32e"
-  }
+    "jjwn": "jeju2025-5e32e"
+  },
+  "targets": {},
+  "etags": {}
 }
