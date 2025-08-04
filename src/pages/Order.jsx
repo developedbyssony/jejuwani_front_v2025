@@ -41,15 +41,15 @@ function orderSheet() {
         console.log(item);
 
 
-            const script = document.createElement("script");
-    script.src = "https://cdn.iamport.kr/js/iamport.payment-1.2.0.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
+        const script = document.createElement("script");
+        script.src = "https://cdn.iamport.kr/js/iamport.payment-1.2.0.js";
+        script.async = true;
+        document.body.appendChild(script);
+        return () => {
+            document.body.removeChild(script);
+        };
 
-    
+
     });
 
     function payment(e) {
@@ -89,7 +89,8 @@ function orderSheet() {
                             console.error("서버 통신 오류:", err);
                         });
                 }
-    })}
+            })
+    }
     return (
         <div className="container-fluid">
             <div className="row">
