@@ -1,6 +1,6 @@
-@use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
-@use '../base/color' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/color" as *;
 
 .order-form {
   display: flex;
@@ -39,7 +39,7 @@
 
     .select-group {
       option {
-        padding:0px;
+        padding: 0px;
       }
 
       &:last-child {
@@ -51,7 +51,7 @@
       margin-bottom: 20px;
 
       dt {
-        font-size:13px;
+        font-size: 13px;
         font-weight: 700;
       }
     }
@@ -87,7 +87,13 @@
 
   #product-show-sec {
     display: flex;
-    margin-top:35px;
+    margin-top: 35px;
+    .product-img-detail-activity,
+    .product-img-detail-restaurant {
+      img {
+        border-radius: 20px;
+      }
+    }
 
     @include responsive(D) {
       flex-direction: row !important;
@@ -152,15 +158,14 @@
 }
 .order-wrap {
   width: 100%;
-      .num {
-      margin-right:40px;
-      float:left;
-    }
+  .num {
+    margin-right: 40px;
+    float: left;
+  }
 }
 
 .order-form .order-inputs {
   .select-group {
-
     &:last-child {
       margin-bottom: 0;
     }
@@ -186,10 +191,10 @@
       justify-content: center;
       margin-bottom: 40px;
       a {
-        flex:1;
+        flex: 1;
       }
       .margin-right {
-        flex:1;
+        flex: 1;
       }
 
       button {
@@ -264,7 +269,7 @@
   padding-top: 15px;
   padding-bottom: 15px;
   text-align: center;
-  width:1440px;
+  width: 1440px;
   margin: 0 auto;
 }
 
@@ -343,7 +348,7 @@
 }
 
 #product-service-rule {
-  margin-top:40px;;
+  margin-top: 40px;
   margin-bottom: 17px;
 }
 
@@ -373,7 +378,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   margin: 23px 0;
 }
 
@@ -411,6 +416,6 @@
 }
 
 #heart-b {
-filter: invert(0);
-margin-right:4px;
+  filter: invert(0);
+  margin-right: 4px;
 }

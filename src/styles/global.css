@@ -3350,6 +3350,10 @@ input[type=checkbox]:checked {
   display: flex;
   margin-top: 35px;
 }
+.product-overview #product-show-sec .product-img-detail-activity img,
+.product-overview #product-show-sec .product-img-detail-restaurant img {
+  border-radius: 20px;
+}
 @media screen and (min-width: 1440px) {
   .product-overview #product-show-sec {
     flex-direction: row !important;
