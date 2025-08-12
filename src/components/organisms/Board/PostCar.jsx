@@ -11,12 +11,12 @@ const posts = ({ posts }) => {
 
     const parentFunction1 = (x) => {
         setStartDate(x);
-        console.log(userStartDate);
+        //console.log(userStartDate);
     };
 
     const parentFunction2 = (x) => {
         setEndDate(x);
-        console.log(userEndDate);
+        //console.log(userEndDate);
     };
 
     const handleModalToggle = (id) => {
@@ -62,7 +62,7 @@ const posts = ({ posts }) => {
                                     </div>
                                     <div className="productUnit-contents-bottom" style={{ display: "flex", flexDirection: "column" }}>
                                         <div className="productLeft">
-                                            <span className="price-20">{post.price}</span>
+                                            <span className="price-20">{post.priceLabel}</span>
                                             <ul className="text-style-13" style={{ display:"flex",paddingLeft: "0px", margin: "8px 0" }}>
                                                 <li>{post.type}</li>
                                                 <li>{post.fuel}</li>

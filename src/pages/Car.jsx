@@ -1,26 +1,51 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import popularList from "../dummy/Car_sample.json";
 import Posts from "../components/organisms/Board/PostCar";
 import Pagination from "../components/organisms/Board/Pagination";
+import SideNav from "../components/organisms/SideNav";
+
+const SORT = {
+    POPULAR: "popular",
+    PRICE_ASC: "price-asc", // 낮은 가격순
+    PRICE_DESC: "price-desc"// 높은 가격순
+}
+
+function parsePrice(v) {
+    if (typeof v === "number") return v;
+    if (!v) return 0;
+    // "120,000원/일" 같은 포맷도 커버
+    const n = String(v).replace(/[^\d]/g, "");
+    return Number(n || 0);
+}
 
 export default function car() {
     useEffect(() => {
-        (async () => {
-          await getCarList();
-        })();
-      }, []);
+        const init = popularList.map((it, idx) => ({
+            id: idx + 1,
+            ...it,
+            priceNum: parsePrice(it.price),
+            priceLabel: it.price
+        }));
+        setPosts(init);
+    }, []);
+
 
     const [searchList, setList] = useState([]);
 
     const [userSearch, setAction] = useState(false);
     const [posts, setPosts] = useState([]);
 
+    const [criteria, setCriteria] = useState({
+        type: null,   // ex) 'SUV'
+        fuel: null,   // ex) '휘발유'
+        year: null   // ex) '2023' 또는 2023
+    });
+
+    const [sortOption, setSortOption] = useState(SORT.POPULAR);
+
+
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(11);
-
-    const indexOfLast = currentPage * postsPerPage;
-    const indexOfFirst = indexOfLast - postsPerPage;
-    const currentPosts = (list) => list.slice(indexOfFirst, indexOfLast);
 
 
     function btnToggle(event) {
@@ -31,24 +56,6 @@ export default function car() {
             event.target.classList.remove("clicked");
         }
     }
-
-    function accordionClick(event) {
-        if (event.target.parentNode.parentNode.nextSibling.classList.length === 1) {
-            event.target.parentNode.parentNode.nextSibling.classList.add("on");
-            event.target.classList.add("rotate");
-            event.target.parentNode.parentNode.classList.add("on");
-        } else {
-            event.target.parentNode.parentNode.nextSibling.classList.remove("on");
-            event.target.classList.remove("rotate");
-            event.target.parentNode.parentNode.classList.remove("on");
-        }
-    }
-
-    const sorts = {
-        type: ["SUV", "경차", "세단"],
-        fuel: ["전기", "휘발유", "LPG"],
-        year: ["2024", "2023", "2022"],
-    };
 
     async function getCarList() {
         const arr = popularList;
@@ -67,16 +74,57 @@ export default function car() {
         });
         setPosts(init);
     }
-    
-    async function searchCar(data, event) {
-        event.preventDefault();
-        btnToggle(event);
-        const match = (car) => car.type === data.sort || car.fuel === data.sort || car.year === data.sort;
-        const filtered = posts.filter(match);
-        setList(filtered);
-        setCurrentPage(1); 
-        setAction(true);
+
+    const searchCar = useCallback((next) => {
+        setCriteria(prev => ({
+            ...prev,
+            ...next
+        }));
+         setCurrentPage(1); // 필터가 바뀌면 페이지를 1로
+    }, []);
+
+    const filtered = useMemo(() => {
+        const { type, fuel, year, keyword } = criteria;
+
+        return posts.filter(car => {
+            const matchType = !type || car.type === type;
+            const matchFuel = !fuel || car.fuel === fuel;
+            const matchYear = !year || String(car.year) === String(year);
+            const matchKeyword =
+                !keyword ||
+                String(car.name).toLowerCase().includes(String(keyword).toLowerCase()) ||
+                String(car.company).toLowerCase().includes(String(keyword).toLowerCase());
+
+            return matchType && matchFuel && matchYear && matchKeyword;
+        });
+    }, [posts, criteria]);
+
+    const sorted = useMemo(() => {
+        if (sortOption === SORT.POPULAR) {
+            // 인기순: 원본 정렬 유지
+            return filtered;
         }
+        if (sortOption === SORT.PRICE_ASC) {
+            return [...filtered].sort((a, b) =>a.priceNum - b.priceNum);
+        }
+        if (sortOption === SORT.PRICE_DESC) {
+            return [...filtered].sort((a, b) => b.priceNum - a.priceNum);
+        }
+        return filtered;
+    }, [filtered, sortOption]);
+
+    const indexOfLast = currentPage * postsPerPage;
+    const indexOfFirst = indexOfLast - postsPerPage;
+    const currentPosts = useMemo(
+        () => sorted.slice(indexOfFirst, indexOfLast),
+        [sorted, indexOfFirst, indexOfLast]
+    );
+    // 정렬 토글 핸들러
+    const handleSortChange = useCallback((opt) => {
+        setSortOption(opt);
+        setCurrentPage(1);
+    }, []);
+
 
     return (
         <>
@@ -91,83 +139,22 @@ export default function car() {
                     </ul>
                 </div>
                 <ul className="sorting-list">
-                    <li className="sorting-item tag-black on">인기순</li>
-                    <li className="sorting-item tag-black">낮은 가격순</li>
-                    <li className="sorting-item tag-black">높은 가격순</li>
+                    <li className={`sorting-item tag-black ${sortOption === SORT.POPULAR ? "on" : ""}`}
+                        onClick={() => handleSortChange(SORT.POPULAR)}
+                    >인기순</li>
+                    <li className={`sorting-item tag-black ${sortOption === SORT.PRICE_ASC ? "on" : ""}`}
+                        onClick={() => handleSortChange(SORT.PRICE_ASC)}>낮은 가격순</li>
+                    <li className={`sorting-item tag-black ${sortOption === SORT.PRICE_DESC ? "on" : ""}`}
+                        onClick={() => handleSortChange(SORT.PRICE_DESC)}>높은 가격순</li>
                 </ul>
                 <div className="section car">
-
-                    <ul className="lnb-sorting" style={{ paddingLeft: "0px" }}>
-                        <li>
-                            <div class="lnb-list-wrap">
-                                <p class="ic-car"></p>
-                                <div class="list-addon-right" onClick={accordionClick}>
-                                    <a href="javascript:void();" class="list-icon arrow"></a>
-                                </div>
-                            </div>
-                            <div className="sort-list">
-                                {sorts.type.map((sort) => {
-                                    return (
-                                        <button
-                                            className="sort-item"
-                                            key={sort}
-                                            onClick={(event) => searchCar({ sort }, event)}
-                                        >
-                                            <span>{sort}</span>
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                        </li>
-                        <li>
-                            <div class="lnb-list-wrap">
-                                <p class="ic-fuel"></p>
-                                <div class="list-addon-right" onClick={accordionClick}>
-                                    <a href="javascript:void();" class="list-icon arrow"></a>
-                                </div>
-                            </div>
-                            <div className="sort-list">
-                                {sorts.fuel.map((sort) => {
-                                    return (
-                                        <button
-                                            className="sort-item"
-                                            key={sort}
-                                            onClick={(event) => searchCar({ sort }, event)}
-                                        >
-                                            <span>{sort}</span>
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                        </li>
-                        <li>
-                            <div class="lnb-list-wrap">
-                                <p class="ic-year"></p>
-                                <div class="list-addon-right" onClick={accordionClick}>
-                                    <a href="javascript:void();" class="list-icon arrow"></a>
-                                </div>
-                            </div>
-                            <div className="sort-list">
-                                {sorts.year.map((sort) => {
-                                    return (
-                                        <button
-                                            className="sort-item"
-                                            key={sort}
-                                            onClick={(event) => searchCar({ sort }, event)}
-                                        >
-                                            <span>{sort}</span>
-                                        </button>
-                                    );
-                                })}
-                            </div>
-                            </li>
-                    </ul>
+                    <SideNav searchCar={searchCar}></SideNav>
                     <div className="content-display">
                         <div className="section-main-activity-sorting">
-                        <Posts posts={currentPosts(userSearch ? searchList : posts)} />
+                            <Posts posts={currentPosts} />
                             <Pagination
                                 postsPerPage={postsPerPage}
-                                totalPosts={userSearch ? searchList.length : posts.length}
+                                totalPosts={sorted.length}
                                 paginate={setCurrentPage}
                             ></Pagination>
                         </div>
