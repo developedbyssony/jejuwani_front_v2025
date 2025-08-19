@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import CartButton from "../atoms/CartButton";
 import Rating from "./RatingStars";
 
 function productUnit({ item, setCart, reverse, cart }) {
@@ -12,6 +13,16 @@ function productUnit({ item, setCart, reverse, cart }) {
     const fprice = useRef();
     const ftarget = useRef();
 
+      const modalClose = () => {
+    if (localStorage.getItem("cartItem") != null) {
+      let getItem = JSON.parse([localStorage.getItem("cartItem")]);
+      getItem.push(JSON.parse(JSON.stringify(product)));
+      localStorage.setItem("cartItem", JSON.stringify(getItem));
+    } else {
+      localStorage.setItem("cartItem", JSON.stringify([product]));
+    }
+  };
+
     return (
         <div
             className="productUnit-frame"
@@ -21,6 +32,8 @@ function productUnit({ item, setCart, reverse, cart }) {
                 });
             }}
         >
+                            <CartButton modalClose={modalClose}></CartButton>
+
             <div className="productUnit-img" ref={fid} id={item.id}>
                 <img
                     src={item.imgSrc}

@@ -154,8 +154,13 @@ const Home = () => {
                             여행이 돌아왔어요!
                         </p>
                         <p className="text-style-34" id="main-tit">
-                            7월에 놓치면
+                            8월에 놓치면
                             <span>후회할 제주 체험</span>
+                            <span>
+                                <Link to="/pages/activity">
+                                <img className="main-tit-more" src="./assets/icon/more-detail.png" alt="more detail"/>
+                                </Link>
+                            </span>
                         </p>
                     </div>
                     <div className="section-main-activity-sorting" id="main-sorting" style={{padding:"0px"}}>
@@ -189,7 +194,13 @@ const Home = () => {
                             id="main-tit"
                         >
                             맛있고 특별한 제주 여행을 즐겨보세요!
+                            <span>
+                                <Link to="/pages/restaurant">
+                                <img className="main-tit-more" src="./assets/icon/more-detail.png" alt="more detail"/>
+                                </Link>
+                            </span>
                         </h1>
+                        
                         <div className="main-sort-row1">
                             <button class="tag-orange on" onClick={() => {
                                 history(view_url, {
@@ -215,7 +226,7 @@ const Home = () => {
                             className="text-style-34"
                             id="main-tit"
                         >
-                            7월의 베스트 Wanner
+                            8월의 베스트 Wanner
                         </h1>
                     </div>
 

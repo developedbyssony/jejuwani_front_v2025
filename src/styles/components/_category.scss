@@ -1,3 +1,6 @@
+@use '../base/color' as *;
+
+
 .category {
   padding: 13px;
   border-bottom: 1px solid #ddd;
@@ -20,4 +23,43 @@
   font-size: 13px;
   line-height: 20px;
   letter-spacing: -0.01em;
+}
+
+.category-table-wrap {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.category-table {
+  width: 1440px;
+    margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  span {
+    position: relative;
+  flex: 1;
+  text-align: center;
+  padding:15px 15px;
+  color:$gray;
+  width: 100%;
+  cursor: pointer;
+  }
+  span:hover {
+    font-weight: 800;
+  }
+  /*
+  span::after {
+    content:"";
+    position:absolute;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    width: 1px;
+    height:19px;
+    background-color: #ccc;
+  }
+  span:last-child::after {
+    display: none;
+  }
+    */
 }

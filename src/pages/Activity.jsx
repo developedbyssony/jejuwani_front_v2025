@@ -52,7 +52,20 @@ export default function activity() {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(10);
     const [dataType, setData] = useState(false);
+    const [selectedRegion, setSelectedRegion] = useState("전체");
+    const [sortOrder, setSortOrder] = useState(null);
 
+    // 지역 필터링
+    let filteredPosts = selectedRegion === "전체"
+        ? posts
+        : posts.filter(post => post.region1 === selectedRegion);
+
+    // 정렬 처리
+    if (sortOrder === "high") {
+        filteredPosts = [...filteredPosts].sort((a, b) => b.price - a.price);
+    } else if (sortOrder === "low") {
+        filteredPosts = [...filteredPosts].sort((a, b) => a.price - b.price);
+    }
 
     const indexOfLast = currentPage * postsPerPage;
     const indexOfFirst = indexOfLast - postsPerPage;
@@ -69,10 +82,43 @@ export default function activity() {
             <div className="landmark-wrap">
                 <div className="activity-landmark"></div>
             </div >
+            <div className="category-table-wrap">
+                <div className="category-table">
+                    {["전체", "제주시", "서귀포시", "섬 속의 섬"].map(region => (
+                        <span
+                            key={region}
+                            onClick={() => setSelectedRegion(region)}
+                            style={{
+                                fontWeight: selectedRegion === region ? "bold" : "normal",
+                                backgroundColor: selectedRegion === region ? "#f3f3f3ff" : "#fff",
+                                cursor: "pointer"
+                            }}
+                        >
+                            {region}
+                        </span>
+                    ))}
+                </div>
+            </div>
             <div className="section">
-                <h1 className="page-tit" id="english">
-                    Popular activities in Jeju
-                </h1>
+                <div className="section-head">
+                    <h1 className="page-tit" id="english">
+                        Popular activities in Jeju
+                    </h1>
+                    <div className="acti-filter-wrap">
+                        <span
+                            className="acti-filter text-style-18"
+                            onClick={() => setSortOrder("high")}
+                        >
+                            가격 높은 순 ▲
+                        </span>
+                        <span
+                            className="acti-filter text-style-18"
+                            onClick={() => setSortOrder("low")}
+                        >
+                            가격 낮은 순 ▼
+                        </span>
+                    </div>
+                </div>
                 <table class="table-re">
                     <caption class="blind">게시판</caption>
                     <colgroup>
@@ -102,12 +148,12 @@ export default function activity() {
                         {dataType == false && <th scope="col">Reservation</th>}
                     </thead>
                     <tbody>
-                        <Posts posts={currentPosts(posts)} reverse={onToggle}></Posts>
+                        <Posts posts={currentPosts(filteredPosts)} reverse={onToggle}></Posts>
                     </tbody>
                 </table>
                 <Pagination
                     postsPerPage={postsPerPage}
-                    totalPosts={posts.length}
+                    totalPosts={filteredPosts.length}
                     paginate={setCurrentPage}
                 ></Pagination>
             </div >

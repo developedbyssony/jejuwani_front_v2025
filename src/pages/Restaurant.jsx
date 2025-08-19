@@ -49,6 +49,10 @@ export default function restaurant() {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(10);
     const [dataType, setData] = useState(true);
+const [selectedRegion, setSelectedRegion] = useState("전체");
+    const filteredPosts = selectedRegion === "전체"
+        ? posts
+        : posts.filter(post => post.region1 === selectedRegion);
 
     const indexOfLast = currentPage * postsPerPage;
     const indexOfFirst = indexOfLast - postsPerPage;
@@ -65,6 +69,23 @@ export default function restaurant() {
         <>
             <div className="landmark-wrap rest">
                 <div className="restaurant-landmark"></div>
+            </div>
+                        <div className="category-table-wrap">
+                <div className="category-table">
+                   {["전체", "제주시", "서귀포시", "섬 속의 섬"].map(region => (
+    <span 
+      key={region} 
+      onClick={() => setSelectedRegion(region)}
+      style={{
+        fontWeight: selectedRegion === region ? "bold" : "normal",
+        backgroundColor: selectedRegion === region ? "#f3f3f3ff" : "#fff",
+        cursor: "pointer"
+      }}
+    >
+      {region}
+    </span>
+  ))}
+                </div>
             </div>
             <div className="section">
                 <h1 className="page-tit" id="english">
@@ -99,12 +120,12 @@ export default function restaurant() {
                         )}
                     </thead>
                     <tbody>
-                        <Posts posts={currentPosts(posts)} reverse={onToggle}></Posts>
+                        <Posts posts={currentPosts(filteredPosts)} reverse={onToggle}></Posts>
                     </tbody>
                 </table>
                 <Pagination
                     postsPerPage={postsPerPage}
-                    totalPosts={posts.length}
+                    totalPosts={filteredPosts.length}
                     paginate={setCurrentPage}
                 ></Pagination>
             </div>

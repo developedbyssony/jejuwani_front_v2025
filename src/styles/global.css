@@ -2111,6 +2111,45 @@ main {
   letter-spacing: -0.01em;
 }
 
+.category-table-wrap {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.category-table {
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  /*
+  span::after {
+    content:"";
+    position:absolute;
+    right:0;
+    top:50%;
+    transform:translateY(-50%);
+    width: 1px;
+    height:19px;
+    background-color: #ccc;
+  }
+  span:last-child::after {
+    display: none;
+  }
+    */
+}
+.category-table span {
+  position: relative;
+  flex: 1;
+  text-align: center;
+  padding: 15px 15px;
+  color: #3F4050;
+  width: 100%;
+  cursor: pointer;
+}
+.category-table span:hover {
+  font-weight: 800;
+}
+
 .form-group {
   width: 100%;
 }
@@ -2712,6 +2751,36 @@ main {
   background-color: #F6CB8D;
 }
 
+.acti-filter-wrap {
+  display: none;
+}
+@media screen and (min-width: 1440px) {
+  .acti-filter-wrap {
+    display: flex;
+  }
+}
+
+.acti-filter {
+  float: right;
+  margin-top: 42px;
+  margin-bottom: 17px;
+  line-height: 34px;
+  cursor: pointer;
+}
+
+.acti-filter:hover {
+  font-weight: bold;
+}
+
+.acti-filter:first-child {
+  margin-right: 20px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+}
+
 .btn-outlined, .btn-secondary, .btn-ghost, .btn-primary, .btn-sort {
   display: flex;
   align-items: center;
@@ -2848,6 +2917,22 @@ main {
 
 #btn-buy {
   width: 100%;
+}
+
+.cart-btn-main {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+}
+@media screen and (min-width: 1440px) {
+  .cart-btn-main {
+    background-image: url("./assets/main/shopping-main.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 10px 10px;
+  }
 }
 
 .signup-form {
@@ -4726,6 +4811,20 @@ footer {
     display: inline;
     margin-left: 4px;
   }
+}
+
+.main-tit-more {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 15px;
+  height: 15px;
+  float: right;
+}
+
+.main-tit-more:hover {
+  top: -3px;
+  transition: ease-in-out 0.5;
 }
 
 .signup-tit1 {

@@ -155,3 +155,18 @@
 #btn-buy {
   width: 100%;
 }
+
+.cart-btn-main {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+
+  @include responsive(D) {
+  background-image: url('./assets/main/shopping-main.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin:10px 10px;
+  }
+}

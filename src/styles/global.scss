@@ -93,7 +93,6 @@ footer {
   margin-top: 3px;
   margin-bottom: 33px;
   line-height: 120%;
-
   span {
     display: block;
     margin-left: 0px;
@@ -103,6 +102,20 @@ footer {
       margin-left: 4px;
     }
   }
+}
+
+.main-tit-more {
+  position: relative;
+  top:0px;
+  left: 0px;
+  width: 15px;
+  height: 15px;
+  float: right;
+}
+
+.main-tit-more:hover {
+  top:-3px;
+  transition: ease-in-out 0.5;
 }
 
 .signup-tit1 {
